@@ -22,7 +22,7 @@ from pathlib import Path
 from urllib.request import urlopen
 
 arch = {"x86_64": "amd64", "aarch64": "arm64"}[platform.machine()]
-base = f"https://binaries.soliditylang.org/linux-{arch}"
+base = f"https://raw.githubusercontent.com/ethereum/solc-bin/gh-pages/linux-{arch}"
 with urlopen(f"{base}/list.json") as response:
     manifest = json.load(response)
 manifest["builds"] = [
